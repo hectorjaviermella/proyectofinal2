@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-sm-6">
+    <h5 class="card-title">Producto Id: {{this._id}} </h5>
+    
+      <div class="card" style="width: 18rem;">
+        <!--img src="{{this.pThumbnails.[0]}}" class="card-img-top" alt="..." /-->
+        <div class="card-body">
+          <h5 class="card-title">Articulo: {{this.pTitle}}</h5>
+          <p class="card-text"> Descripcion: {{this.pDescription}}</p>
+          <p class="card-text">Stock: {{this.pStock}}- Precio: ${{this.pPrice}}</p>
+               
+        <form method="POST" action="http://localhost:8080/api/carts/6439b6b407e66806cadbffcd/product/{{this._id}}">
+    <button type="submit">Agregar a carrito</button>
+  </form>
+        </div>
+      </div>
+    
+        
+  </div>
+ 
+</div>

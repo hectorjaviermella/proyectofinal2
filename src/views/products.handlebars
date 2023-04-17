@@ -1,0 +1,40 @@
+
+<div class="row">
+  <div class="col-sm-6">
+    {{#each productos}}
+      <div class="card" style="width: 18rem;">
+        <img src="{{this.pThumbnails.[0]}}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{this.pTitle}}</h5>
+          <a href="/product/{{this._id}}">Descripcion: {{this.pDescription}}</a>
+          <p class="card-text"> Categoria: {{this.pCategory}}</p>          
+          <p class="card-text"> Status: {{this.pStatus}}</p>
+          <p class="card-text"> Precio: ${{this.pPrice}}</p>
+                  
+        <form method="POST" action="http://localhost:8080/api/carts/6439b6b407e66806cadbffcd/product/{{this._id}}">
+    <button type="submit">Agregar a carrito</button>
+  </form>
+        
+        </div>
+      </div>
+    {{/each}}
+
+    {{#if hasPrevPage}}
+    <a href="/products?page={{prevPage}}">Anterior</a>
+  {{/if}}
+
+   {{page}} de {{totalPages}} 
+
+   {{#if hasNextPage}}
+    <a href="/products?page={{nextPage}}">Siguiente</a>
+  {{/if}}
+</div>
+
+ 
+
+ 
+
+     
+  </div>
+ 
+</div>
